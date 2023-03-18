@@ -1,0 +1,14 @@
+import docx
+
+
+document = docx.Document('a21-A500U20-1-ms.docx')
+
+tables = document.tables
+
+print(f"Number of tables found: {len(tables)}")
+
+for i, table in enumerate(tables):
+    print(f"Table {i+1}:")
+    for row in table.rows:
+        for cell in row.cells:
+            print(cell.text)
